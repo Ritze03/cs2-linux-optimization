@@ -29,7 +29,7 @@ ___
 CPU: Intel Core i9-10900K @ 5.1 GHz
 GPU: AMD Radeon RX 6700 XT
 RAM: 32GB @ 3333 MHz
-OS: EndeavourOS (Arch) with KDE Plasma 6 (Wayland)
+OS: EndeavourOS (Arch)
 Kernel: 6.16.12-lqx
 Dekstop Environment: KDE Plasma 6
 Display Server: Wayland
