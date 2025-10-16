@@ -27,11 +27,17 @@ Each step is designed to remove every bottleneck possible and make CS2 perform a
 ___
 # 1. My Setup
 CPU: Intel Core i9-10900K @ 5.1 GHz
+
 GPU: AMD Radeon RX 6700 XT
+
 RAM: 32GB @ 3333 MHz
+
 OS: EndeavourOS (Arch)
+
 Kernel: 6.16.12-lqx
+
 Dekstop Environment: KDE Plasma 6
+
 Display Server: Wayland
 
 *I can only guarantee for similar OS/Kernel setups! If your setup is vastly different, proceed with caution.* 
