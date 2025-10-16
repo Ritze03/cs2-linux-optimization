@@ -48,7 +48,7 @@ ___
 
 Map used for benchmarking: [https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604](https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604)
 
-| CS2                                | AVG FPS     | P1 FPS      |
+| Optimizations                      | AVG FPS     | P1 FPS      |
 | ---------------------------------- | ----------- | ----------- |
 | **LLPC, no optimizations**         | 264         | 121         |
 | **LLPC 2nd run, no optimizations** | 162         | 94          |
