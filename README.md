@@ -46,6 +46,7 @@ ___
 | **LLPC 2nd run, no optimizations** | 162         | 94          |
 | **ACO + optimizations**            | 395 (+49%)  | 192 (+58%)  |
 | **ACO 2nd run  + optimizations**   | 407 (+151%) | 190 (+102%) |
+
 *And yes, this is higher than I get in Windows 10/11. Input latency is effectively eliminated, making the game feel extremely responsive!*
 
 *On ACO I’m peaking at 1000+ FPS in the last scene, where the camera is pointed towards the sky! (not representative of actual gameplay, but still cool)*
