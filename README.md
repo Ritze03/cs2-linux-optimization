@@ -1,4 +1,4 @@
-[Click here to view as HTML for the best reading experience](https://ritze03.github.io/cs2-linux-optimization/guide.html)
+[Click here to view as HTML for the original export](https://ritze03.github.io/cs2-linux-optimization/guide.html)
 
 # Introduction (quick overview)
 This guide is aimed at players who want the smoothest and most responsible CS2 experience on Linux with AMD GPUs. I will walk you through every step and explain what and why we are doing each step. 
