@@ -38,7 +38,7 @@ Display Server: Wayland
 ___
 # 2. Is this guide even worth your time? (Performance comparison)
 
-**Map used for benchmarking: [https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604](https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604)
+Map used for benchmarking: [https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604](https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604)
 
 |                                    | AVG FPS     | P1 FPS      |
 | ---------------------------------- | ----------- | ----------- |
