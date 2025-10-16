@@ -101,7 +101,7 @@ driverInfo = Mesa 25.2.4-arch1.2              ← mesa >20.2 ACO by default!
 VK_KHR_driver_properties : extension revision 1
 ```
 
-*You are already running ACO. Skip ahead to step X.X for further improvements!*
+*You are already running ACO. Skip ahead to step 6 for further improvements!*
 ___
 # 4. Installing the necessary packages for ACO
 Run the following command:
