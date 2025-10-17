@@ -118,9 +118,9 @@ Run the following command, to uninstall the discontinued AMDVLK driver:
 sudo pacman -R amdvlk lib32-amdvlk
 ```
 *Thanks to **u/nkamerad** for pointing this out and saving everyone with this issue a lot of time!*
-*If you installed steam before September 2025 the AMDVLK driver would automatically be installed as a dependency.*
+*If you installed steam before September 2025 you may have accidentally installed the wrong `vulkan-driver` provider, causing this issue.*
 
-Reboot and repeat step 3. If that didn’t do the trick, continue with step 5. Otherwise skip to step 6 for more optimizations!
+Reboot and repeat step 3. If that didn’t do the trick, continue with step 5. Otherwise skip to step 6 for more optimizations (You can still check out step 5 for advanced optimizations)!
 ___
 # 5. Forcing all applications to default to ACO
 ## 5.0 breakdown of what we are going to do
