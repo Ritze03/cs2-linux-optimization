@@ -1,4 +1,4 @@
-[Click here to view as HTML for the original export](https://ritze03.github.io/cs2-linux-optimization/guide.html)
+[GitHub Pages Link for the original HTML export](https://ritze03.github.io/cs2-linux-optimization/guide.html)
 
 # Introduction (quick overview)
 This guide is aimed at players who want the smoothest and most responsible CS2 experience on Linux with AMD GPUs. I will walk you through every step and explain what and why we are doing each step. 
@@ -26,27 +26,24 @@ This guide covers:
 - Fixing potential VAC errors caused by Gamescopes “nice” capabilities.
 
 Each step is designed to remove every bottleneck possible and make CS2 perform at its absolute best on Linux by eliminating shader stutter and ensuring consistent frametimes.
+
+### About the AI comments: 
+Yes, AI was used for fixing spelling mistakes, weirdly structured sentences, writing some of the explanations and for some improvement suggestions. All of the core content and information is sourced from the Arch Wiki, Forum/Blog posts and GitHub issues. All of the formatting was done by hand in Obsidian with Markdown. Emojis were used to really make the important information stand out (even though i hate them myself).
 ___
 # 1. My Setup
-CPU: Intel Core i9-10900K @ 5.1 GHz
-
-GPU: AMD Radeon RX 6700 XT
-
-RAM: 32GB @ 3333 MHz
-
-OS: EndeavourOS (Arch)
-
-Kernel: 6.16.12-lqx
-
-Dekstop Environment: KDE Plasma 6
-
-Display Server: Wayland
+**CPU:** Intel Core i9-10900K @ 5.1 GHz
+**GPU:** AMD Radeon RX 6700 XT
+**RAM:** 32GB @ 3333 MHz
+**OS:** EndeavourOS (Arch)
+**Kernel:** 6.16.12-lqx
+**Dekstop Environment:** KDE Plasma 6
+**Display Server:** Wayland
 
 *I can only guarantee for similar OS/Kernel setups! If your setup is vastly different, proceed with caution.* 
 ___
 # 2. Is this guide even worth your time? (Performance comparison)
 
-Map used for benchmarking: [https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604](https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604)
+**Map used for benchmarking: [https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604](https://steamcommunity.com/sharedfiles/filedetails/?id=3240880604)
 
 | **Optimizations**                  | **AVG FPS** | **P1 FPS**  |
 | ---------------------------------- | ----------- | ----------- |
@@ -103,18 +100,27 @@ VK_KHR_driver_properties : extension revision 1
 
 *You are already running ACO. Skip ahead to step 6 for further improvements!*
 ___
-# 4. Installing the necessary packages for ACO
+# 4. Installing the necessary packages for ACO and uninstalling the discontinued amdvlk driver
 Run the following command:
 ```bash
-sudo pacman -S vulkan-radeon lib32-vulkan-radeon
+sudo pacman -Syu mesa vulkan-radeon lib32-vulkan-radeon
 ```
 
-*Reboot and repeat step 3. If that didn’t do the trick, continue with step 5. Otherwise skip to step 6 for more optimizations!*
+Uninstalling the old AMDVLK driver should make Vulkan default to the faster RADV/Mesa implementation.
+Run the following command, to uninstall the discontinued AMDVLK driver:
+```bash
+sudo pacman -R amdvlk lib32-amdvlk
+```
+*Thanks to **u/nkamerad** for pointing this out and saving everyone with this issue a lot of time!*
+*If you installed steam before September 2025 the AMDVLK driver would automatically be installed as a dependency.*
+
+Reboot and repeat step 3. If that didn’t do the trick, continue with step 5. Otherwise skip to step 6 for more optimizations!
 ___
 # 5. Forcing all applications to default to ACO
 ## 5.0 breakdown of what we are going to do
-*You can skip reading this if you don’t care to understand, what we are actually going to do.*
+⚠️ **Disclaimer:** Doing any of the following steps can cause your system to not boot or show any display output anymore. In general it is not recommended to modify system files with sudo on a productive system.
 
+🔴 Please skip setting **VK_ICD_FILENAMES** and **RADV_PERFTEST** if your system is already using the MESA/RADV implementation. Setting **MESA_SHADER_CACHE_DIR** can still slightly lower compilation and loading times. Also step **5.2.1 (experimental)** can lead to a more responsive experience.
 #### We are going to modify the following variables:
 **VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json**
 *By default the Driver is selected in alphabetical order. The default amdgpu driver comes first. We are going to override it with the radeon_icd driver.*
